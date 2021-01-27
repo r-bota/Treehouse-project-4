@@ -1,3 +1,8 @@
+@function lightenbutton($buttoncolor){
+  @return lighten($buttoncolor, $amount: 15%);
+}
+  
+
 
 .btn {
     margin-top: 15px;
@@ -7,28 +12,41 @@
     padding: 10px 0;
     text-transform: uppercase;
     border-radius: 5px;
-    &:hover {
-     background-color: lighten($color: $color-light-green, $amount: 15%);
+    transition: ease-in 0.3s;
+  &:hover {
+     background-color: lightenbutton($color-light-green);
     }
   }
   
   .default {
     background-color: $color-light-green;
   }
-  
+
   .error {
     background-color: $color-red;
+    &:hover {
+     background-color: lightenbutton($color-red);
+    }
   }
   
   .info {
     background-color: $color-info;
+    &:hover {
+      background-color: lightenbutton($color-info);
+    }
   }
   
   .success {
     background-color: $color-success;
+    &:hover {
+      background-color: lightenbutton($color-success);
+    }
   }
   
   .warning {
     background-color: $color-warning;
+    &:hover {
+      background-color: lightenbutton($color-warning);
+    }
   }
   
